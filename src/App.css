@@ -1,0 +1,83 @@
+.container {
+  max-width: 1140px;
+  margin: auto;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.inte-card {
+  width: 90% !important;
+  border-radius: 10px !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.inte-card__Footer {
+  border-top: 1px solid rgb(151 151 151) !important;
+}
+
+.inte-form__item img {
+  height: 200px;
+  width: 90%;
+}
+
+.inte-card+.inte-card {
+  margin: 0 !important;
+}
+
+.percent {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(82, 80, 79);
+}
+
+.rating {
+  font-size: 1rem;
+  font-weight: 600;
+  color: orange;
+}
+
+.icons__block,
+.price__block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inte__Topbar-Connect--Left img {
+  height: 30px;
+  width: 50px;
+}
+
+.search {
+  margin: auto;
+  width: 96%;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inte__AutoComplete {
+  width: 95%;
+}
+
+.inte-btn--Primary {
+  background: rgb(255, 255, 255) !important;
+  color: black !important;
+  border: 1px solid #bbbbbb !important;
+}
+
+.inte__AutoComplete ul {
+  display: none !important;
+}
+
+.close__icon {
+  cursor: pointer;
+}
