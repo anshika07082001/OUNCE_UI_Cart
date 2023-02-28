@@ -78,6 +78,15 @@
   display: none !important;
 }
 
-.close__icon {
+.close__icon{
   cursor: pointer;
+}
+
+.inte-FilterSheet--BodyAccordion .inte__accordion {
+  text-align: initial;
+}
+
+.check__block {
+  display: flex ;
+  flex-direction: column !important;
 }
