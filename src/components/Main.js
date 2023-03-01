@@ -51,17 +51,20 @@ const Main = () => {
   }, []);
 
   const addCart = (index) => {
-    if (products[index].stock > 0) {
+    if (searchArr[index].stock > 0) {
       if (cart.length > 0) {
         for (var i = 0; i < cart.length; i++) {
-          if (cart[i].id === products[index].id) {
+          if (cart[i].id === searchArr[index].id) {
             cart[i].quantity++;
             break;
           } else if (i === cart.length - 1) {
             var obj = {
-              id: products[index].id,
-              title: products[index].title,
-              price: products[index].price,
+              id: searchArr[index].id,
+              img:searchArr[index].thumbnail,
+              des:searchArr[index].description,
+              title: searchArr[index].title,
+              price: searchArr[index].price,
+              brand:searchArr[index].category,
               quantity: 1,
             };
             cart.push(obj);
@@ -70,9 +73,12 @@ const Main = () => {
         }
       } else {
         obj = {
-          id: products[index].id,
-          title: products[index].title,
-          price: products[index].price,
+          id: searchArr[index].id,
+          img:searchArr[index].thumbnail,
+          des:searchArr[index].description,
+          title: searchArr[index].title,
+          price: searchArr[index].price,
+          brand:searchArr[index].category,
           quantity: 1,
         };
         cart.push(obj);
