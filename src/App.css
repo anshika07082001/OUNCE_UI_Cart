@@ -153,4 +153,15 @@
     margin: 0 !important;
     width: 70% !important;
   }
+  .carts {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width:440px){
+  .cartCards {
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr)) !important;
+    gap: 20px;
+  }
 }
