@@ -1,17 +1,11 @@
-import {
-  Card,
-  FlexLayout,
-  FormElement,
-  Grid,
-  Topbar,
-} from "@cedcommerce/ounce-ui";
+import { Card, Topbar } from "@cedcommerce/ounce-ui";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Cart = (props) => {
-  console.log(props.cart);
   return (
     <>
+    {/* rendering of navbar */}
       <Topbar
         connectLeft={
           <Link to="/">
@@ -28,6 +22,7 @@ const Cart = (props) => {
           />
         }
       ></Topbar>
+      {/* rendering of carts products in cards format */}
       {props.cart.length > 0 ? (
         <div className="cartCards">
           {props.cart.map((item) => {
@@ -65,6 +60,7 @@ const Cart = (props) => {
           })}
         </div>
       ) : (
+        // rendering of image if cart is empty
         <img
           src="https://assets.materialup.com/uploads/66fb8bdf-29db-40a2-996b-60f3192ea7f0/preview.png"
           alt=""

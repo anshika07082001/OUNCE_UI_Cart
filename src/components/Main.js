@@ -11,6 +11,7 @@ const Main = () => {
   var [flag, setFlag] = useState(true);
   var checkRefs = useRef([]);
 
+  // dynamically rendering of array in a filter box
   var filterArr = [
     {
       name: "Brand",
@@ -40,6 +41,7 @@ const Main = () => {
     },
   ];
 
+  // fetching the data from dummy json
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
@@ -50,6 +52,7 @@ const Main = () => {
       });
   }, []);
 
+  // function adds the product to cart array
   const addCart = (index) => {
     if (searchArr[index].stock > 0) {
       if (cart.length > 0) {
@@ -60,11 +63,11 @@ const Main = () => {
           } else if (i === cart.length - 1) {
             var obj = {
               id: searchArr[index].id,
-              img:searchArr[index].thumbnail,
-              des:searchArr[index].description,
+              img: searchArr[index].thumbnail,
+              des: searchArr[index].description,
               title: searchArr[index].title,
               price: searchArr[index].price,
-              brand:searchArr[index].category,
+              brand: searchArr[index].category,
               quantity: 1,
             };
             cart.push(obj);
@@ -74,11 +77,11 @@ const Main = () => {
       } else {
         obj = {
           id: searchArr[index].id,
-          img:searchArr[index].thumbnail,
-          des:searchArr[index].description,
+          img: searchArr[index].thumbnail,
+          des: searchArr[index].description,
           title: searchArr[index].title,
           price: searchArr[index].price,
-          brand:searchArr[index].category,
+          brand: searchArr[index].category,
           quantity: 1,
         };
         cart.push(obj);
@@ -87,17 +90,16 @@ const Main = () => {
     }
   };
 
+  // function searches the products
   const searchHandler = () => {
     setFlag(true);
     var arr = [];
     searchArr = [];
-
     checkRefs.current.map((item) => {
       if (item.checked) {
         arr.push(item.getAttribute("value"));
       }
     });
-    console.log(arr);
     products.map((item) => {
       if (
         item.title.toString().slice(0, val.length).toLocaleLowerCase() ==
@@ -110,6 +112,7 @@ const Main = () => {
     setSearchArr(searchArr);
   };
 
+  // function filters the products on the basis of brands
   const applyFilter = () => {
     var flag = false;
     searchArr = [];
@@ -133,6 +136,7 @@ const Main = () => {
     setSearchArr(searchArr);
   };
 
+  // function resets the filter applied on products array
   const resetFilter = () => {
     checkRefs.current.map((item) => {
       item.checked = false;
@@ -142,6 +146,7 @@ const Main = () => {
 
   return (
     <Routes>
+      {/* rendering of home page */}
       <Route
         path="/"
         element={
@@ -161,7 +166,8 @@ const Main = () => {
           />
         }
       />
-      <Route path="/cart" element={<Cart cart={cart}/>} />
+      {/* rendering of cart page */}
+      <Route path="/cart" element={<Cart cart={cart} />} />
     </Routes>
   );
 };

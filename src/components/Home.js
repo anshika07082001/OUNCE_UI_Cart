@@ -37,7 +37,7 @@ const Home = (props) => {
           options={[]}
           thickness="thick"
           placeHolder="Search Your Items here..."
-            onChange={(e) => props.setVal(e)}
+          onChange={(e) => props.setVal(e)}
           onEnter={props.searchHandler}
           value={props.val}
           clearButton={<i className="fa fa-close close__icon"></i>}
