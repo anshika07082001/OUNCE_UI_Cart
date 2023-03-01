@@ -143,3 +143,14 @@
   display: flex ;
   flex-direction: column !important;
 }
+
+@media (max-width:585px){
+  .cartCards {
+    padding:90px 0px 10px 0px;
+    grid-template-columns: repeat(auto-fill,minmax(500px,1fr)) !important;
+  }
+  .inte-card {
+    margin: 0 !important;
+    width: 70% !important;
+  }
+}
